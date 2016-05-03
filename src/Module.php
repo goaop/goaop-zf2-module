@@ -11,31 +11,25 @@
 namespace Go\ZF2\GoAopModule;
 
 use Go\Core\AspectContainer;
-use Zend\EventManager\StaticEventManager;
+use Zend\EventManager\EventInterface;
+use Zend\ModuleManager\Feature\BootstrapListenerInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
-use Zend\Mvc\Application;
 use Zend\Mvc\MvcEvent;
 
 /**
  * ZF2 Module for registration of Go! AOP Framework
  */
-class Module implements ConfigProviderInterface
+class Module implements ConfigProviderInterface, BootstrapListenerInterface
 {
-    public function __construct()
-    {
-        $manager = StaticEventManager::getInstance();
-        // Register our listener with max priority
-        $manager->attach(Application::class, MvcEvent::EVENT_BOOTSTRAP, [$this, 'onBootstrap'], PHP_INT_MAX);
-    }
 
     /**
      * Listen to the bootstrap event
      *
-     * @param MvcEvent $e
+     * @param MvcEvent|EventInterface $e
      *
      * @return array
      */
-    public function onBootstrap(MvcEvent $e)
+    public function onBootstrap(EventInterface $e)
     {
         $serviceManager = $e->getApplication()->getServiceManager();
 
