@@ -1,0 +1,15 @@
+{
+    "name": "goaop/goaop-zf2-module",
+    "description": "Integration module for Go! AOP Framework",
+    "type": "library",
+    "require": {
+        "goaop/framework": "^1.0|^2.0@dev"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lisachenko Alexander",
+            "email": "lisachenko.it@gmail.com"
+        }
+    ]
+}
