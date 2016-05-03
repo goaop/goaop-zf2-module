@@ -26,7 +26,7 @@ $moduleConfig = [
      | For production mode, no extra filemtime checks and better integration with opcache
      |
      */
-    'debug' => false,
+    'debug' => true,
 
     /*
      |--------------------------------------------------------------------------

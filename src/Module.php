@@ -42,7 +42,7 @@ class Module implements ConfigProviderInterface
         /** @var AspectContainer $aspectContainer */
         $aspectContainer = $serviceManager->get(AspectContainer::class);
         $config          = $serviceManager->get('config');
-        $listOfAspects   = $config['goaop_aspects'];
+        $listOfAspects   = $config['goaop_aspect'];
         foreach ($listOfAspects as $aspectService) {
             $aspect = $serviceManager->get($aspectService);
             $aspectContainer->registerAspect($aspect);
