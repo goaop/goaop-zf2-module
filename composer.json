@@ -2,8 +2,10 @@
     "name": "goaop/goaop-zf2-module",
     "description": "Integration module for Go! AOP Framework",
     "type": "library",
+    "keywords": ["module", "zend", "zf2", "aop", "php", "aspect"],
     "require": {
-        "goaop/framework": "^1.0|^2.0@dev"
+        "goaop/framework": "^1.0|^2.0@dev",
+        "zendframework/zendframework": "^2.0"
     },
     "license": "MIT",
     "authors": [
@@ -11,5 +13,10 @@
             "name": "Lisachenko Alexander",
             "email": "lisachenko.it@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "Go\\ZF2\\GoAopModule\\" : "src/"
+        }
+    }
 }
