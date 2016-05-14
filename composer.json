@@ -4,7 +4,7 @@
     "type": "library",
     "keywords": ["module", "zend", "zf2", "aop", "php", "aspect"],
     "require": {
-        "goaop/framework": "^1.0|^2.0@dev",
+        "goaop/framework": "^1.0|^2.0",
         "zendframework/zendframework": "^2.0"
     },
     "license": "MIT",
