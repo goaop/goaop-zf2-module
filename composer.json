@@ -14,6 +14,7 @@
             "email": "lisachenko.it@gmail.com"
         }
     ],
+    "bin": ["bin/goaop-zf2-warmup"],
     "autoload": {
         "psr-4": {
             "Go\\ZF2\\GoAopModule\\" : "src/"
