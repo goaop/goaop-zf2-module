@@ -12,6 +12,10 @@
         {
             "name": "Lisachenko Alexander",
             "email": "lisachenko.it@gmail.com"
+        },
+        {
+            "name": "Andreas Frömer",
+            "email": "blubb0r05+github@gmail.com"
         }
     ],
     "bin": ["bin/goaop-zf2-warmup"],
