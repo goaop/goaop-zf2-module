@@ -72,9 +72,7 @@ $moduleConfig = [
      | AOP will check this list to apply an AOP to selected directories only,
      | leave it empty if you want AOP to be applied to all files in the appDir
      */
-    'includePaths' => [
-        $basicDirectory . '/module'
-    ],
+    'includePaths' => [],
 
     /*
      |--------------------------------------------------------------------------
