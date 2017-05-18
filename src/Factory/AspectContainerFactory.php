@@ -11,11 +11,29 @@
 namespace Go\ZF2\GoAopModule\Factory;
 
 use Go\Core\AspectKernel;
+use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
 class AspectContainerFactory implements FactoryInterface
 {
+
+    /**
+     * Create service
+     *
+     * This method gains ZF3 compatibility
+     *
+     * @param ContainerInterface $container
+     * @param string             $requestedName
+     * @param array              $options
+     *
+     * @return mixed
+     */
+    public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
+    {
+        return $this->createService($container);
+    }
+
     /**
      * Create service
      *
