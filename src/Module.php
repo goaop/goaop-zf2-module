@@ -11,27 +11,35 @@
 namespace Go\ZF2\GoAopModule;
 
 use Go\Core\AspectContainer;
-use Zend\EventManager\EventInterface;
-use Zend\ModuleManager\Feature\BootstrapListenerInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
-use Zend\Mvc\MvcEvent;
+use Zend\ModuleManager\Feature\InitProviderInterface;
+use Zend\ModuleManager\ModuleEvent;
+use Zend\ModuleManager\ModuleManagerInterface;
 
 /**
  * ZF2 Module for registration of Go! AOP Framework
  */
-class Module implements ConfigProviderInterface, BootstrapListenerInterface
+class Module implements ConfigProviderInterface, InitProviderInterface
 {
+    /**
+     * @inheritDoc
+     */
+    public function init(ModuleManagerInterface $manager)
+    {
+        $manager->getEventManager()->attach(
+            ModuleEvent::EVENT_LOAD_MODULES_POST,
+            [ $this, 'initializeAspects']
+        );
+    }
 
     /**
-     * Listen to the bootstrap event
+     * Register aspects after all modules are loaded.
      *
-     * @param MvcEvent|EventInterface $e
-     *
-     * @return array
+     * @param ModuleEvent $e
      */
-    public function onBootstrap(EventInterface $e)
+    public function initializeAspects(ModuleEvent $e)
     {
-        $serviceManager = $e->getApplication()->getServiceManager();
+        $serviceManager = $e->getParam('ServiceManager');
 
         /** @var AspectContainer $aspectContainer */
         $aspectContainer = $serviceManager->get(AspectContainer::class);
