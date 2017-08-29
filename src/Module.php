@@ -28,7 +28,8 @@ class Module implements ConfigProviderInterface, InitProviderInterface
     {
         $manager->getEventManager()->attach(
             ModuleEvent::EVENT_LOAD_MODULES_POST,
-            [ $this, 'initializeAspects', PHP_INT_MAX ]
+            [ $this, 'initializeAspects' ],
+            1000000
         );
     }
 
