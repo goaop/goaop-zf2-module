@@ -23,5 +23,10 @@
         "psr-4": {
             "Go\\ZF2\\GoAopModule\\" : "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Go\\ZF2\\GoAopModule\\Tests\\" : "tests/"
+        }
     }
 }
