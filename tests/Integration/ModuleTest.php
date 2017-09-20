@@ -13,14 +13,12 @@ use Zend\Mvc\Application;
  */
 class ModuleTest extends TestCase
 {
-    const APPLICATION_CONFIG_PATH = __DIR__ . '/../resources/application_config.php';
-
     /**
      * @test
      */
     public function itRegistersTestAspectViaConfiguration()
     {
-        $configuration = require static::APPLICATION_CONFIG_PATH;
+        $configuration = require __DIR__ . '/../resources/application_config.php';
         $application = Application::init($configuration);
 
         /** @var GoAspectContainer $container */
