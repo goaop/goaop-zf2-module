@@ -12,8 +12,6 @@ use Zend\ServiceManager\ServiceLocatorInterface;
  */
 class AspectKernelFactoryTest extends TestCase
 {
-    const CONFIG_PATH = __DIR__ . '/../../resources/goaop_module.php';
-
     /**
      * @test
      */
@@ -21,7 +19,7 @@ class AspectKernelFactoryTest extends TestCase
     {
         $serviceLocator = $this->prophesize(ServiceLocatorInterface::class);
         $serviceLocator->get('config')
-            ->willReturn(['goaop_module' => require static::CONFIG_PATH])
+            ->willReturn(['goaop_module' => require __DIR__ . '/../../resources/goaop_module.php'])
             ->shouldBeCalled();
 
         $factory = new AspectKernelFactory();
@@ -42,7 +40,7 @@ class AspectKernelFactoryTest extends TestCase
     {
         $serviceLocator = $this->prophesize(ServiceLocatorInterface::class);
         $serviceLocator->get('config')
-            ->willReturn(['goaop_module' => require static::CONFIG_PATH])
+            ->willReturn(['goaop_module' => require __DIR__ . '/../../resources/goaop_module.php'])
             ->shouldBeCalled();
 
         $factory = new AspectKernelFactory();
