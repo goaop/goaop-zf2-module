@@ -30,12 +30,12 @@
     "bin": ["bin/goaop-zf2-warmup"],
     "autoload": {
         "psr-4": {
-            "Go\\ZF2\\GoAopModule\\" : "src/"
+            "Go\\Zend\\Framework\\" : "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Go\\ZF2\\GoAopModule\\Tests\\" : "tests/"
+            "Go\\Zend\\Framework\\Tests\\" : "tests/"
         }
     }
 }

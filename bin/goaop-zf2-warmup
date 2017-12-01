@@ -2,7 +2,7 @@
 <?php
 
 use Go\Core\AspectKernel;
-use Go\ZF2\GoAopModule\Console\Warmup\Zf2WarmupCommand;
+use Go\Zend\Framework\Console\Command\WarmupCommand;
 use Symfony\Component\Console\Application;
 
 
@@ -27,6 +27,6 @@ if (!class_exists('Symfony\Component\Console\Application')) {
 }
 
 $app = new Application('Go! AOP', AspectKernel::VERSION);
-$app->add(new Zf2WarmupCommand());
+$app->add(new WarmupCommand());
 $app->run();
 

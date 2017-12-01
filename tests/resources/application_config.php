@@ -1,7 +1,7 @@
 <?php
 
 $modules = [
-    'Go\ZF2\GoAopModule',
+    'Go\Zend\Framework',
 ];
 
 if (class_exists('Zend\Router\Module')) {
@@ -14,6 +14,7 @@ return [
         'module_paths' => [
             __DIR__ . '/../../vendor',
         ],
+
         'config_glob_paths' => [
             __DIR__ . '/{{,*.}global,{,*.}local}.php',
         ],

@@ -9,8 +9,8 @@
 use Go\Core\AspectContainer;
 use Go\Core\AspectKernel;
 use Go\Core\GoAspectContainer;
-use Go\ZF2\GoAopModule\Factory\AspectContainerFactory;
-use Go\ZF2\GoAopModule\Factory\AspectKernelFactory;
+use Go\Zend\Framework\Factory\AspectContainerFactory;
+use Go\Zend\Framework\Factory\AspectKernelFactory;
 
 $basicDirectory = defined('APPLICATION_PATH') ? APPLICATION_PATH : __DIR__ . '/../../../..';
 

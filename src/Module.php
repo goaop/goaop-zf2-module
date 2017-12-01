@@ -8,7 +8,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Go\ZF2\GoAopModule;
+namespace Go\Zend\Framework;
 
 use Go\Core\AspectContainer;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
