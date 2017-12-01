@@ -11,5 +11,11 @@ use Go\Lang\Annotation\Around;
  */
 class TestAspect implements Aspect
 {
-
+    /**
+     * @param MethodInvocation $invocation
+     * @Around("execution(public Go\Zend\Framework\Tests\Advice\TestAdvice->get*(*))")
+     */
+    public function aspectAdvice(MethodInvocation $invocation)
+    {
+    }
 }

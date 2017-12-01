@@ -1,9 +1,10 @@
 <?php
 
 return [
-    'goaop_module'    => require 'goaop_module.php',
-    'goaop_aspect'    => [
-        \Go\ZF2\GoAopModule\Tests\Aspect\TestAspect::class,
+    \Go\Zend\Framework\Module::CONFIG_KEY => require 'goaop_module.php',
+
+    \Go\Zend\Framework\Module::ASPECT_CONFIG_KEY => [
+        \Go\Zend\Framework\Tests\Aspect\TestAspect::class,
     ],
 
     'service_manager' => [

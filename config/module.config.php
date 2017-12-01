@@ -94,12 +94,14 @@ $moduleConfig = [
 ];
 
 return [
-    'goaop_module'    => $moduleConfig,
+    \Go\Zend\Framework\Module::CONFIG_KEY => $moduleConfig,
+
     'service_manager' => [
         'factories' => [
             AspectKernel::class    => AspectKernelFactory::class,
             AspectContainer::class => AspectContainerFactory::class,
         ]
     ],
-    'goaop_aspect' => []
+
+    \Go\Zend\Framework\Module::ASPECT_CONFIG_KEY => []
 ];

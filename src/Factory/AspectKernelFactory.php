@@ -44,8 +44,8 @@ class AspectKernelFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        $aspectKernel = AspectZf2Kernel::getInstance();
-        $aspectKernel->init($serviceLocator->get('config')['goaop_module']);
+        $aspectKernel = AspectKernel::getInstance();
+        $aspectKernel->init($serviceLocator->get('config')[Module::CONFIG_KEY]);
 
         return $aspectKernel;
     }

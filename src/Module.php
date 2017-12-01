@@ -17,10 +17,13 @@ use Zend\ModuleManager\ModuleEvent;
 use Zend\ModuleManager\ModuleManagerInterface;
 
 /**
- * ZF2 Module for registration of Go! AOP Framework
+ * Module for registration of Go! AOP Framework
  */
 class Module implements ConfigProviderInterface, InitProviderInterface
 {
+    public const CONFIG_KEY = 'goaop_module';
+    public const ASPECT_CONFIG_KEY = 'goaop_aspect';
+
     /**
      * @inheritDoc
      */
@@ -44,7 +47,8 @@ class Module implements ConfigProviderInterface, InitProviderInterface
         /** @var AspectContainer $aspectContainer */
         $aspectContainer = $serviceManager->get(AspectContainer::class);
         $config          = $serviceManager->get('config');
-        $listOfAspects   = $config['goaop_aspect'];
+        $listOfAspects   = $config[self::ASPECT_CONFIG_KEY];
+
         foreach ($listOfAspects as $aspectService) {
             $aspect = $serviceManager->get($aspectService);
             $aspectContainer->registerAspect($aspect);

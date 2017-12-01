@@ -1,2 +1,5 @@
 /vendor/
 composer.lock
+
+# Test specific ignores
+tests/resources/cache

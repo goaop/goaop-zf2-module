@@ -66,7 +66,7 @@ class ModuleTest extends TestCase
             ->willReturn($aspectContainer->reveal())
             ->shouldBeCalled();
         $serviceManager->get('config')
-            ->willReturn(['goaop_aspect' => ['testAspect']])
+            ->willReturn([Module::ASPECT_CONFIG_KEY => ['testAspect']])
             ->shouldBeCalled();
         $serviceManager->get('testAspect')
             ->willReturn($aspect)
