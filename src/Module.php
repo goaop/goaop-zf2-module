@@ -21,8 +21,8 @@ use Zend\ModuleManager\ModuleManagerInterface;
  */
 class Module implements ConfigProviderInterface, InitProviderInterface
 {
-    public const CONFIG_KEY = 'goaop_module';
-    public const ASPECT_CONFIG_KEY = 'goaop_aspect';
+    const CONFIG_KEY = 'goaop_module';
+    const ASPECT_CONFIG_KEY = 'goaop_aspect';
 
     /**
      * @inheritDoc
