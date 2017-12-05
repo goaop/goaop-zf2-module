@@ -6,10 +6,18 @@ php:
   - 7.1
 
 matrix:
+  include:
+    - php: 5.6
+      env: ZF_VERSION=2
+    - php: 7.0
+      env: ZF_VERSION=2
+    - php: 7.1
+      env: ZF_VERSION=2
   fast_finish: true
 
 before_install:
   - phpenv config-rm xdebug.ini
+  - if [ "$ZF_VERSION" = "2" ]; then sed 's/ | ^3.0//g' composer.json > composer_v27.json; rm composer.json; mv composer_v27.json composer.json; fi
 
 install:
   - composer install --no-progress --no-interaction --prefer-dist --no-suggest

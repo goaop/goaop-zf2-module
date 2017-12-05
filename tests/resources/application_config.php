@@ -1,13 +1,15 @@
 <?php
 
+$modules = [
+    'Go\ZF2\GoAopModule',
+];
+
+if (class_exists('Zend\Router\Module')) {
+    $modules[] = 'Zend\Router';
+}
+
 return [
-    'modules' => [
-        'Go\ZF2\GoAopModule',
-
-        // Required to initialize application
-        'Zend\Router',
-    ],
-
+    'modules' => $modules,
     'module_listener_options' => [
         'module_paths' => [
             __DIR__ . '/../../vendor',
