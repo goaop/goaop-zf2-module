@@ -18,5 +18,5 @@ return [
         'config_glob_paths' => [
             __DIR__ . '/{{,*.}global,{,*.}local}.php',
         ],
-    ],
+    ]
 ];

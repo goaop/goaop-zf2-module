@@ -6,8 +6,7 @@
     "license": "MIT",
     "require": {
         "goaop/framework": "^1.0|^2.0",
-        "zendframework/zend-modulemanager": "^2.0 | ^3.0",
-        "symfony/console": "^3.0 || ^4.0"
+        "zendframework/zend-modulemanager": "^2.0 | ^3.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.0 | ^6.0",
@@ -17,6 +16,9 @@
         "zendframework/zend-log": "^2.0",
         "zendframework/zend-i18n": "^2.0",
         "zendframework/zend-console": "^2.0"
+    },
+    "suggest": {
+        "symfony/console": "Required to use goaop console warmup"
     },
     "authors": [
         {
