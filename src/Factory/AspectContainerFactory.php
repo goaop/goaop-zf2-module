@@ -8,7 +8,7 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Go\ZF2\GoAopModule\Factory;
+namespace Go\Zend\Framework\Factory;
 
 use Go\Core\AspectKernel;
 use Interop\Container\ContainerInterface;

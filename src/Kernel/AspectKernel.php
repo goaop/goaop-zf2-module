@@ -8,16 +8,15 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Go\ZF2\GoAopModule\Kernel;
+namespace Go\Zend\Framework\Kernel;
 
 
 use Go\Core\AspectContainer;
-use Go\Core\AspectKernel;
 
 /**
- * ZF2 aspect kernel class
+ * Aspect kernel class
  */
-class AspectZf2Kernel extends AspectKernel
+class AspectKernel extends \Go\Core\AspectKernel
 {
 
     /**

@@ -13,6 +13,7 @@
         <testsuite name="Go! AOP ZF Module Test Suite">
             <directory>./tests/Integration/</directory>
             <directory>./tests/Unit/</directory>
+            <directory>./tests/Functional/</directory>
         </testsuite>
     </testsuites>
     <filter>

@@ -1,10 +1,10 @@
 <?php
 
-namespace Go\ZF2\GoAopModule\Tests\Unit;
+namespace Go\Zend\Framework\Tests\Unit;
 
 use Go\Aop\Aspect;
 use Go\Core\AspectContainer;
-use Go\ZF2\GoAopModule\Module;
+use Go\Zend\Framework\Module;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
 use Zend\EventManager\EventManagerInterface;
@@ -13,7 +13,7 @@ use Zend\ModuleManager\ModuleManagerInterface;
 use Zend\ServiceManager\ServiceManager;
 
 /**
- * @package Go\ZF2\GoAopModule\Tests\Unit
+ * @package Go\Zend\Framework\Tests\Unit
  */
 class ModuleTest extends TestCase
 {
@@ -66,7 +66,7 @@ class ModuleTest extends TestCase
             ->willReturn($aspectContainer->reveal())
             ->shouldBeCalled();
         $serviceManager->get('config')
-            ->willReturn(['goaop_aspect' => ['testAspect']])
+            ->willReturn([Module::ASPECT_CONFIG_KEY => ['testAspect']])
             ->shouldBeCalled();
         $serviceManager->get('testAspect')
             ->willReturn($aspect)

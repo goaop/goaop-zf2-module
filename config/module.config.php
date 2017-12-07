@@ -9,8 +9,8 @@
 use Go\Core\AspectContainer;
 use Go\Core\AspectKernel;
 use Go\Core\GoAspectContainer;
-use Go\ZF2\GoAopModule\Factory\AspectContainerFactory;
-use Go\ZF2\GoAopModule\Factory\AspectKernelFactory;
+use Go\Zend\Framework\Factory\AspectContainerFactory;
+use Go\Zend\Framework\Factory\AspectKernelFactory;
 
 $basicDirectory = defined('APPLICATION_PATH') ? APPLICATION_PATH : __DIR__ . '/../../../..';
 
@@ -94,12 +94,14 @@ $moduleConfig = [
 ];
 
 return [
-    'goaop_module'    => $moduleConfig,
+    \Go\Zend\Framework\Module::CONFIG_KEY => $moduleConfig,
+
     'service_manager' => [
         'factories' => [
             AspectKernel::class    => AspectKernelFactory::class,
             AspectContainer::class => AspectContainerFactory::class,
         ]
     ],
-    'goaop_aspect' => []
+
+    \Go\Zend\Framework\Module::ASPECT_CONFIG_KEY => []
 ];

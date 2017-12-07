@@ -1,6 +1,6 @@
 <?php
 
-namespace Go\ZF2\GoAopModule\Console\Warmup;
+namespace Go\Zend\Framework\Console\Command;
 
 use Go\Core\AspectKernel;
 use Go\Instrument\ClassLoading\SourceTransformingLoader;
@@ -11,7 +11,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class Zf2WarmupCommand extends Command
+class WarmupCommand extends Command
 {
     /**
      * {@inheritDoc}

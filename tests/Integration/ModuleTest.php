@@ -1,15 +1,15 @@
 <?php
 
-namespace Go\ZF2\GoAopModule\Tests\Integration;
+namespace Go\Zend\Framework\Tests\Integration;
 
 use Go\Core\AspectContainer;
 use Go\Core\GoAspectContainer;
-use Go\ZF2\GoAopModule\Tests\Aspect\TestAspect;
+use Go\Zend\Framework\Tests\Aspect\TestAspect;
 use PHPUnit\Framework\TestCase;
 use Zend\Mvc\Application;
 
 /**
- * @package Go\ZF2\GoAopModule\Tests\Integration
+ * @package Go\Zend\Framework\Tests\Integration
  */
 class ModuleTest extends TestCase
 {

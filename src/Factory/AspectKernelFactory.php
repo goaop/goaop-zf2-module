@@ -8,9 +8,10 @@
  * with this source code in the file LICENSE.
  */
 
-namespace Go\ZF2\GoAopModule\Factory;
+namespace Go\Zend\Framework\Factory;
 
-use Go\ZF2\GoAopModule\Kernel\AspectZf2Kernel;
+use Go\Zend\Framework\Kernel\AspectKernel;
+use Go\Zend\Framework\Module;
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
@@ -43,8 +44,8 @@ class AspectKernelFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        $aspectKernel = AspectZf2Kernel::getInstance();
-        $aspectKernel->init($serviceLocator->get('config')['goaop_module']);
+        $aspectKernel = AspectKernel::getInstance();
+        $aspectKernel->init($serviceLocator->get('config')[Module::CONFIG_KEY]);
 
         return $aspectKernel;
     }

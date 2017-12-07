@@ -1,14 +1,15 @@
 <?php
 
-namespace Go\ZF2\GoAopModule\Tests\Unit\Factory;
+namespace Go\Zend\Framework\Tests\Unit\Factory;
 
 use Go\Core\AspectKernel;
-use Go\ZF2\GoAopModule\Factory\AspectKernelFactory;
+use Go\Zend\Framework\Factory\AspectKernelFactory;
+use Go\Zend\Framework\Module;
 use PHPUnit\Framework\TestCase;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
 /**
- * @package Go\ZF2\GoAopModule\Tests\Unit\Factory
+ * @package Go\Zend\Framework\Tests\Unit\Factory
  */
 class AspectKernelFactoryTest extends TestCase
 {
@@ -19,7 +20,7 @@ class AspectKernelFactoryTest extends TestCase
     {
         $serviceLocator = $this->prophesize(ServiceLocatorInterface::class);
         $serviceLocator->get('config')
-            ->willReturn(['goaop_module' => require __DIR__ . '/../../resources/goaop_module.php'])
+            ->willReturn([Module::CONFIG_KEY => require __DIR__ . '/../../resources/goaop_module.php'])
             ->shouldBeCalled();
 
         $factory = new AspectKernelFactory();
@@ -40,7 +41,7 @@ class AspectKernelFactoryTest extends TestCase
     {
         $serviceLocator = $this->prophesize(ServiceLocatorInterface::class);
         $serviceLocator->get('config')
-            ->willReturn(['goaop_module' => require __DIR__ . '/../../resources/goaop_module.php'])
+            ->willReturn([Module::CONFIG_KEY => require __DIR__ . '/../../resources/goaop_module.php'])
             ->shouldBeCalled();
 
         $factory = new AspectKernelFactory();
