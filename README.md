@@ -30,17 +30,16 @@ GoAopModule can be easily installed with composer. Just ask a composer to downlo
 $ composer require goaop/goaop-zf2-module
 ```
 
-Add the `Go\ZF2\GoAopModule` to your list of modules in the config/application.config.php `modules` array:
+Add the `Go\Zend\Framework` to your list of modules in the config/application.config.php `modules` array:
 ```php
 // config/application.config.php
 
     // This should be an array of module namespaces used in the application.
     'modules' => array(
-        'Go\ZF2\GoAopModule',
+        'Go\Zend\Framework',
         'Application',
     ),
 ```
-Make sure that this service provider is the **first item** in this list. This is required for the AOP engine to work correctly.
 
 Configuration
 -------------
